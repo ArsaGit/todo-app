@@ -8,7 +8,7 @@ import (
 
 func TestGETTodos(t *testing.T) {
 	t.Run("возвращает todo c id=1", func(t *testing.T) {
-		request, _ := http.NewRequest(http.MethodGet, "/todos", nil)
+		request, _ := http.NewRequest(http.MethodGet, "/todos/1", nil)
 		response := httptest.NewRecorder()
 
 		TodoServer(response, request)
