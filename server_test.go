@@ -14,7 +14,7 @@ func TestGETTodos(t *testing.T) {
 		TodoServer(response, request)
 
 		got := response.Body.String()
-		want := `{"title": "Some title", "description": "Description of todo in details"}`
+		want := `{"title": "Название задачи", "description": "Описание задачи в деталях"}`
 
 		if got != want {
 			t.Errorf("got %q want %q", got, want)
