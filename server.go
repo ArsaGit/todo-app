@@ -6,5 +6,5 @@ import (
 )
 
 func TodoServer(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, `{"title": "Some title", "description": "Description of todo in details"}`)
+	fmt.Fprintf(w, `{"title": "Название задачи", "description": "Описание задачи в деталях"}`)
 }
