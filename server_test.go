@@ -20,4 +20,18 @@ func TestGETTodos(t *testing.T) {
 			t.Errorf("got %q want %q", got, want)
 		}
 	})
+
+	t.Run("возвращает todo c id=2", func(t *testing.T) {
+		request, _ := http.NewRequest(http.MethodGet, "/todos/2", nil)
+		response := httptest.NewRecorder()
+
+		TodoServer(response, request)
+
+		got := response.Body.String()
+		want := `{"title": "Название задачи с id2", "description": "Описание задачи в деталях todo2"}`
+
+		if got != want {
+			t.Errorf("got %q want %q", got, want)
+		}
+	})
 }
